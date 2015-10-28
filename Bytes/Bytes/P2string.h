@@ -36,7 +36,7 @@ public:
 	//constructor vacio
 	P2String(){ capacity = 0; string = NULL; }
 	//constructor copia cadena
-	P2String(const char*_string){ _string; }
+	P2String(const char*_string){};
 	//constructor copia capacity
 	P2String(UINT _capacity){ this->capacity = _capacity;}
 	//constructor puntero a la cadena
