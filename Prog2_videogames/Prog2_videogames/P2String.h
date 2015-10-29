@@ -23,14 +23,14 @@ public:
 	P2String(const P2String&);
 
 	//destructor
-	~P2String(){};
+	~P2String();
 
 	//getters
-	P2String getCapacity();
-	P2String getString();
+	UINT GetSize(const char*)const;
+	const char* _string()const;
 
 	//operators
-	bool operator == (const P2String&)const;
+	bool operator == (const char*)const;
 	bool operator != (const P2String&)const;
 
 	/*

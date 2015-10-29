@@ -2,26 +2,33 @@
 #include"P2string.h"
 
 
-P2String::P2String()
-{
-	string = NULL;
-	capacity = 0;
-}
+P2String::P2String(){}
 
 //constructor copia de una cadena
 P2String::P2String(const char* _string)
 {
-	capacity = strlen(_string);
-	_string = new  char[capacity + 1];
-	strcpy_s(string, capacity, _string);
+	if (string != NULL)
+	{ 
+		if (string > NULL)
+		{
+	     capacity = strlen(_string) + 1;
+	     string = new  char[capacity];
+	     strcpy_s(string,capacity,_string);
+		}
+	}
 
-	delete _string;
+	
 }
 
 //constructor copia de capacidad
 P2String::P2String(UINT _capacity)
 {
-	capacity = _capacity;
+	if (capacity > 0)
+	{
+		string = new char[_capacity];
+		capacity = _capacity;
+    }
+	
 }
 
 //constructor copia de un puntero a la cadena
@@ -31,25 +38,38 @@ P2String::P2String(const P2String& _string)
 	string = new char[capacity + 1];
 	strcpy_s(string, capacity, _string.string);
 
-	delete string;
+	
+}
+
+P2String::~P2String()
+{
+	if (string != NULL)
+	{
+		delete[] this->string;
+	}
 }
 
 //getters los necesitamos porque como nuestras variables estan en privado tenemos que tenerlos para poder retornar sus valores
-P2String P2String::getCapacity()
+UINT P2String::GetSize(const char* _string)const
 {
-	return capacity;
+	UINT size = 0;
+	size = strlen(_string);
+
+    return size;
 }
 
-P2String P2String::getString()
+const char* P2String::_string()const
 {
-	return string;
+
+	return 0;
 }
 
-bool P2String::operator==(const P2String& chain)const
-{
-	P2String tmp;
 
-	if (chain.string == tmp.string)
+bool P2String::operator==(const char* chain)const
+{
+	
+
+	if (strcmp(string,chain) == 0)
 	{
 		return true;
 	}
