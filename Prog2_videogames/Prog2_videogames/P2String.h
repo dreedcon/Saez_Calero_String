@@ -8,7 +8,7 @@ class P2String
 
 private:
 
-	char* string;
+    char* string;
 	UINT capacity;
 
 public:
@@ -31,14 +31,15 @@ public:
 
 	//operators
 	bool operator == (const char*)const;
+	bool operator == (const P2String&)const;
+
+	bool operator != (const char*)const;
 	bool operator != (const P2String&)const;
-
-	/*
-
-
+	
+	P2String operator = (const char*);
 	P2String operator = (const P2String&);
-	operador de asignacion->comprobar si hay memoria, si no hay suficiente para copiar tienes que crear una nueva
-	*/
+	
+	
 
 };
 

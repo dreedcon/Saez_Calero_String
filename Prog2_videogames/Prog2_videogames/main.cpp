@@ -3,11 +3,12 @@
 
 int main()
 {
-	P2String prueba[10];
-	const char* a = "hola";
+	P2String prueba("hola");
+	P2String prueba1("hola mundo");
+	const char* a = "hol";
 	
-
-	prueba->operator==(a);
+	
+	prueba = a;
 	
 
 	system("pause");

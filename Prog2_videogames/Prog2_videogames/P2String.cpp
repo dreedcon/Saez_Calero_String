@@ -7,14 +7,13 @@ P2String::P2String(){}
 //constructor copia de una cadena
 P2String::P2String(const char* _string)
 {
-	if (string != NULL)
+	if (_string != NULL)
 	{ 
-		if (string > NULL)
-		{
+		
 	     capacity = strlen(_string) + 1;
 	     string = new  char[capacity];
 	     strcpy_s(string,capacity,_string);
-		}
+		
 	}
 
 	
@@ -67,9 +66,24 @@ const char* P2String::_string()const
 
 bool P2String::operator==(const char* chain)const
 {
-	
+	if (chain != NULL)
+	{
+		if (strcmp(string, chain) == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		return false;
+	}
+}
 
-	if (strcmp(string,chain) == 0)
+bool P2String::operator==(const P2String& chain)const
+{
+
+	if (strcmp(string, chain.string) == 0)
 	{
 		return true;
 	}
@@ -78,4 +92,47 @@ bool P2String::operator==(const char* chain)const
 		return false;
 	}
 
+}
+
+bool P2String::operator!=(const char* chain)const
+{
+	if (strcmp(string, chain) != 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+
+}
+
+bool P2String::operator!=(const P2String& chain)const
+{
+	if (strcmp(string, chain.string) != 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+
+}
+
+P2String P2String::operator=(const char* chain)
+{
+	UINT size = 0;
+	UINT size1 = 0;
+	size = strlen(chain);
+	size1 = strlen(string);
+	
+	if (chain != NULL)
+	{
+		size = size1;
+	}
+	
+	return *this;
 }
