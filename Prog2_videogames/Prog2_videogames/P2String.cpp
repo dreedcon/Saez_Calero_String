@@ -57,10 +57,10 @@ UINT P2String::GetSize(const char* _string)const
     return size;
 }
 
-const char* P2String::_string()const
+const char* P2String::C_str()const
 {
 
-	return 0;
+	return (string);
 }
 
 
@@ -122,17 +122,33 @@ bool P2String::operator!=(const P2String& chain)const
 
 }
 
-P2String P2String::operator=(const char* chain)
+const P2String P2String::operator=(const P2String& chain)
 {
-	UINT size = 0;
-	UINT size1 = 0;
-	size = strlen(chain);
-	size1 = strlen(string);
-	
-	if (chain != NULL)
+	UINT size = chain.capacity + 1;
+
+	if (size > capacity)
 	{
-		size = size1;
+		delete[] string;
+		capacity = size;
+		string = new char[size];
 	}
+		strcpy_s(string, size, chain.string);
 	
+	return *this;
+}
+
+const P2String P2String::operator+=(const P2String& chain)
+{
+	if (chain.string != NULL && string != NULL){
+		UINT size = strlen(string) + strlen(chain.string) + 1;
+        if (size > capacity)
+		{    
+			char* tmp = new char[size];
+			strcpy_s(string, size, chain.string);
+			string = new char[size];
+
+		}
+		strcat_s(string, capacity, chain.string);
+	}
 	return *this;
 }

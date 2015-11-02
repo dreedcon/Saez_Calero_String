@@ -4,11 +4,11 @@
 int main()
 {
 	P2String prueba("hola");
-	P2String prueba1("hola mundo");
+	P2String prueba1("mundo");
 	const char* a = "hol";
 	
 	
-	prueba = a;
+	prueba += prueba1;
 	
 
 	system("pause");

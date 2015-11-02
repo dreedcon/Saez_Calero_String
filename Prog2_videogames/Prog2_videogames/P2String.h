@@ -27,7 +27,7 @@ public:
 
 	//getters
 	UINT GetSize(const char*)const;
-	const char* _string()const;
+	const char* C_str()const;
 
 	//operators
 	bool operator == (const char*)const;
@@ -36,9 +36,9 @@ public:
 	bool operator != (const char*)const;
 	bool operator != (const P2String&)const;
 	
-	P2String operator = (const char*);
-	P2String operator = (const P2String&);
+	const P2String operator = (const P2String&);
 	
+	const P2String operator +=(const P2String&);
 	
 
 };
@@ -65,6 +65,13 @@ capacity
 DESTRUCTOR
 
 cuidado con los news y deletes
+
+empit()si la cadena esta vacia o no
+clear() deja la cadena vacia
+prefix()hace lo mismo que el += pero al principio
+c_str()
+length()
+
 
 */
 
