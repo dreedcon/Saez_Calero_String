@@ -8,8 +8,8 @@ int main()
 	const char* a = "mundo";
 	
 	
-	prueba += a;
+	//prueba += a;
+    prueba += prueba1;
 	
-
-	system("pause");
+	
 }
