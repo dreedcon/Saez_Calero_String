@@ -5,10 +5,10 @@ int main()
 {
 	P2String prueba("hola");
 	P2String prueba1("mundo");
-	const char* a = "hol";
+	const char* a = "mundo";
 	
 	
-	prueba += prueba1;
+	prueba += a;
 	
 
 	system("pause");

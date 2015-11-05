@@ -32,12 +32,10 @@ P2String::P2String(UINT _capacity)
 
 //constructor copia de un puntero a la cadena
 P2String::P2String(const P2String& _string)
-{
-	capacity = _string.capacity;
-	string = new char[capacity + 1];
-	strcpy_s(string, capacity, _string.string);
-
-	
+{ 
+	UINT size = strlen(_string.string) + 1;
+	string = new char[size];
+	strcpy_s(string, size , _string.string);
 }
 
 P2String::~P2String()
@@ -137,6 +135,7 @@ const P2String P2String::operator=(const P2String& chain)
 	return *this;
 }
 
+/*
 const P2String P2String::operator+=(const P2String& chain)
 {
 	if (chain.string != NULL && string != NULL){
@@ -146,9 +145,33 @@ const P2String P2String::operator+=(const P2String& chain)
 			char* tmp = new char[size];
 			strcpy_s(string, size, chain.string);
 			string = new char[size];
-
+			//delete[] string;
+			
+			strcat_s(string, capacity, chain.string);
 		}
-		strcat_s(string, capacity, chain.string);
+		else
+		{
+			strcat_s(string, capacity, chain.string);
+		}
+		}
+	return (*this);
+}
+*/
+
+const P2String P2String::operator+=(const char* chain)
+{
+
+	if (chain != NULL && string != NULL)
+	{
+		UINT size = strlen(string) + strlen(chain) + 1;
+
+		if (size > capacity)
+		{
+			
+			string = new char[size];
+			strcpy_s(string, size, chain);
+			delete[] string;
+       }
 	}
-	return *this;
+	return (*this);
 }

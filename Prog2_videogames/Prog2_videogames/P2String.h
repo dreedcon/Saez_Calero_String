@@ -39,7 +39,7 @@ public:
 	const P2String operator = (const P2String&);
 	
 	const P2String operator +=(const P2String&);
-	
+	const P2String operator +=(const char*);
 
 };
 
