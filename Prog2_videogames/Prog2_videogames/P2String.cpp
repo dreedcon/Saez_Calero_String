@@ -120,6 +120,21 @@ bool P2String::operator!=(const P2String& chain)const
 
 }
 
+const P2String P2String::operator=(const char*chain)
+{
+	UINT size = strlen(chain) + 1;
+
+	if (size > capacity)
+	{
+		delete[] string;
+		capacity = size;
+		string = new char[size];
+	}
+	strcpy_s(string, size, chain);
+
+	return *this;
+}
+
 const P2String P2String::operator=(const P2String& chain)
 {
 	UINT size = chain.capacity + 1;
@@ -148,9 +163,11 @@ const P2String P2String::operator+=(const char* chain)
 			char* tmp = new char[size];
 			strcpy_s(tmp, size, string);
 			string = new char[size];
+			
 			strcpy_s(string, size, chain);
 			chain = tmp;
 			strcat_s(string, size, chain);
+			
 			delete[] tmp;
 		} 
 		else
@@ -168,22 +185,70 @@ const P2String P2String::operator+=(const P2String& chain)
 		UINT size = (strlen(string)+1) + (strlen(chain.string) + 1);
 		if (size > capacity)
 		{    
-			 
-			 P2String tmp = new char[size];
-			 strcpy_s(tmp.string, size, string);
+			 char* tmp = new char[size];
+			 strcpy_s(tmp, size, string);
 			 string = new char[size];
 			 
 			 strcpy_s(string,size,chain.string);
-			 strcpy_s(chain.string, size, tmp.string);
+			 strcpy_s(chain.string, size, tmp);
 			
 			 
 			 strcat_s(string, size, chain.string);
 			 
+			 delete[] tmp;
 		}
 		else
-		{
-		       strcat_s(string, capacity, chain.string);
+		 strcat_s(string, capacity, chain.string);
 		}
+
+	return (*this);
+}
+
+//utility functions
+
+const void P2String::Clear()const
+{
+   string[0] = '\0';
+}
+
+
+
+bool P2String::Empit()const
+{
+	UINT size = strlen(string);
+
+	if ( size == NULL)
+		return true;
+	else
+		return false;
+}
+
+const P2String P2String::Prefix(const char* chain)
+{
+
+	if (chain != NULL && string != NULL)
+	{
+		UINT size = (strlen(string) + 1) + (strlen(chain) + 1);
+		if (size > capacity)
+		{
+			strcat_s(string, size, chain);
+        }
 	}
-return (*this);
+	
+	return (*this);
+}
+
+const P2String P2String::Prefix(const P2String& chain)
+{
+
+	if (chain.string != NULL && string != NULL)
+	{
+		UINT size = (strlen(string) + 1) + (strlen(chain.string) + 1);
+		if (size > capacity)
+		{
+		    strcat_s(string, size, chain.string);
+        }
+	}
+    
+	return (*this);
 }

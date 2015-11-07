@@ -1,7 +1,10 @@
+#include "Utilities.h"
+
+
 #ifndef _STRING_
 #define _STRING_
 
-#define UINT unsigned int
+
 
 class P2String
 {
@@ -36,10 +39,20 @@ public:
 	bool operator != (const char*)const;
 	bool operator != (const P2String&)const;
 	
+	const P2String operator = (const char*);
 	const P2String operator = (const P2String&);
 	
 	const P2String operator +=(const P2String&);
 	const P2String operator +=(const char*);
+
+	//utility functions
+	
+	const void Clear()const;
+	bool Empit()const;
+
+	const P2String Prefix(const char*);
+	const P2String Prefix(const P2String&);
+		
 
 };
 
