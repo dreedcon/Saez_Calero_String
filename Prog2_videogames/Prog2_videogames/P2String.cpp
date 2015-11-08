@@ -156,7 +156,7 @@ const P2String P2String::operator+=(const char* chain)
 
 	if (chain != NULL && string != NULL)
 	{
-		UINT size = (strlen(string) + 1) + (strlen(chain) + 1);
+		UINT size = strlen(string)  + (strlen(chain) + 1);
 
 		if (size > capacity)
 		{   
@@ -182,7 +182,7 @@ const P2String P2String::operator+=(const P2String& chain)
 {
 	if (chain.string != NULL && string != NULL)
 	{
-		UINT size = (strlen(string)+1) + (strlen(chain.string) + 1);
+		UINT size = strlen(string) + (strlen(chain.string) + 1);
 		if (size > capacity)
 		{    
 			 char* tmp = new char[size];
@@ -228,7 +228,7 @@ const P2String P2String::Prefix(const char* chain)
 
 	if (chain != NULL && string != NULL)
 	{
-		UINT size = (strlen(string) + 1) + (strlen(chain) + 1);
+		UINT size = strlen(string)  + (strlen(chain) + 1);
 		if (size > capacity)
 		{
 			strcat_s(string, size, chain);
