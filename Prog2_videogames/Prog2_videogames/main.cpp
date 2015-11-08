@@ -10,7 +10,7 @@ int main()
 	const char* a = "mundo";
 
 	
-	prueba += prueba1;
+	prueba.Prefix(a);
 	
 	
 	prueba.Clear();

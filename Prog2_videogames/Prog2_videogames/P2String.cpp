@@ -42,7 +42,7 @@ P2String::~P2String()
 {
 	if (string != NULL)
 	{
-		delete[] this->string;
+		delete[] string;
 	}
 }
 
