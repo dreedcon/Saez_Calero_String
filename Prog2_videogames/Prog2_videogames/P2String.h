@@ -31,7 +31,10 @@ public:
 	//getters
 	UINT GetSize(const char*)const;
 	const char* C_str()const;
-
+   
+	UINT length(const char*)const;
+	UINT length(const P2String&)const;
+	
 	//operators
 	bool operator == (const char*)const;
 	bool operator == (const P2String&)const;
@@ -46,7 +49,6 @@ public:
 	const P2String operator +=(const char*);
 
 	//utility functions
-	
 	const void Clear()const;
 	bool Empit()const;
 

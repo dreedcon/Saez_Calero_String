@@ -46,7 +46,7 @@ P2String::~P2String()
 	}
 }
 
-//getters los necesitamos porque como nuestras variables estan en privado tenemos que tenerlos para poder retornar sus valores
+//getters 
 UINT P2String::GetSize(const char* _string)const
 {
 	UINT size = 0;
@@ -61,7 +61,32 @@ const char* P2String::C_str()const
 	return (string);
 }
 
+UINT P2String::length(const char* _string)const
+{
+	
+	int count = 0;
+	while (count < sizeof(_string + 1))
+	{
+		count++;
+	}
 
+	return count;
+}
+
+UINT P2String::length(const P2String& _string)const
+{
+
+	int count = 0;
+	while (count < sizeof(_string.string + 1))
+	{
+		count++;
+	}
+
+	return count;
+}
+
+
+//operadores
 bool P2String::operator==(const char* chain)const
 {
 	if (chain != NULL)
