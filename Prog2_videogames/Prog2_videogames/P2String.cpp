@@ -2,7 +2,13 @@
 #include"P2string.h"
 
 
-P2String::P2String(){}
+P2String::P2String()
+{
+
+	capacity = 0;
+	string = NULL;
+
+}
 
 //constructor copia de una cadena
 P2String::P2String(const char* _string)
@@ -30,7 +36,7 @@ P2String::P2String(UINT _capacity)
 	
 }
 
-//constructor copia de un puntero a la cadena
+//constructor copia
 P2String::P2String(const P2String& _string)
 { 
 	UINT size = strlen(_string.string) + 1;
@@ -47,12 +53,9 @@ P2String::~P2String()
 }
 
 //getters 
-UINT P2String::GetSize(const char* _string)const
+UINT P2String::GetCapacity()const
 {
-	UINT size = 0;
-	size = strlen(_string);
-
-    return size;
+     return capacity;
 }
 
 const char* P2String::C_str()const
@@ -61,91 +64,40 @@ const char* P2String::C_str()const
 	return (string);
 }
 
-UINT P2String::length(const char* _string)const
+UINT P2String::Length()const
 {
 	
 	int count = 0;
-	while (count < sizeof(_string + 1))
+	while (count < sizeof(string))
 	{
 		count++;
 	}
 
 	return count;
 }
-
-UINT P2String::length(const P2String& _string)const
-{
-
-	int count = 0;
-	while (count < sizeof(_string.string + 1))
-	{
-		count++;
-	}
-
-	return count;
-}
-
 
 //operadores
 bool P2String::operator==(const char* chain)const
 {
-	if (chain != NULL)
-	{
-		if (strcmp(string, chain) == 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-		return false;
-	}
+	return (strcmp(string, chain) == 0);
 }
 
 bool P2String::operator==(const P2String& chain)const
 {
-
-	if (strcmp(string, chain.string) == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-
+    return (strcmp(string, chain.string) == 0);
 }
 
 bool P2String::operator!=(const char* chain)const
 {
-	if (strcmp(string, chain) != 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-
-
+	return (strcmp(string, chain) != 0);	
 }
 
 bool P2String::operator!=(const P2String& chain)const
 {
-	if (strcmp(string, chain.string) != 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-
-
+	return (strcmp(string, chain.string) != 0);
 }
 
-const P2String P2String::operator=(const char*chain)
+const P2String& P2String::operator=(const char*chain)
 {
 	UINT size = strlen(chain) + 1;
 
@@ -160,7 +112,7 @@ const P2String P2String::operator=(const char*chain)
 	return *this;
 }
 
-const P2String P2String::operator=(const P2String& chain)
+const P2String& P2String::operator=(const P2String& chain)
 {
 	UINT size = chain.capacity + 1;
 
@@ -176,7 +128,7 @@ const P2String P2String::operator=(const P2String& chain)
 }
 
 
-const P2String P2String::operator+=(const char* chain)
+const P2String& P2String::operator+=(const char* chain)
 {
 
 	if (chain != NULL && string != NULL)
@@ -186,8 +138,7 @@ const P2String P2String::operator+=(const char* chain)
 		if (size > capacity)
 		{   
 			char* tmp = new char[size];
-			strcpy_s(tmp, size, string);
-			string = new char[size];
+			strcpy_s(tmp, size, chain);
 			
 			strcpy_s(string, size, chain);
 			chain = tmp;
@@ -203,7 +154,7 @@ const P2String P2String::operator+=(const char* chain)
 	return (*this);
 }
 
-const P2String P2String::operator+=(const P2String& chain)
+const P2String& P2String::operator+=(const P2String& chain)
 {
 	if (chain.string != NULL && string != NULL)
 	{
@@ -212,7 +163,6 @@ const P2String P2String::operator+=(const P2String& chain)
 		{    
 			 char* tmp = new char[size];
 			 strcpy_s(tmp, size, string);
-			 string = new char[size];
 			 
 			 strcpy_s(string,size,chain.string);
 			 strcpy_s(chain.string, size, tmp);
@@ -242,38 +192,56 @@ bool P2String::Empit()const
 {
 	UINT size = strlen(string);
 
-	if ( size == NULL)
-		return true;
-	else
-		return false;
+	return (size == NULL);
+
 }
 
-const P2String P2String::Prefix(const char* chain)
+const P2String& P2String::Prefix(const char* chain)
 {
-
-	if (chain != NULL && string != NULL)
+  if (chain != NULL && string != NULL)
 	{
-		UINT size = strlen(string)  + (strlen(chain) + 1);
+		UINT size = strlen(string) + (strlen(chain) + 1);
+
 		if (size > capacity)
 		{
+			char* tmp = new char[size];
+			strcpy_s(tmp, size, string);
+
+			strcpy_s(string, size, chain);
+			chain = tmp;
 			strcat_s(string, size, chain);
-        }
+
+			delete[] tmp;
+		}
+		else
+		{
+			strcat_s(string, capacity, chain);
+		}
 	}
-	
 	return (*this);
 }
 
-const P2String P2String::Prefix(const P2String& chain)
+const P2String& P2String::Prefix(const P2String& chain)
 {
-
-	if (chain.string != NULL && string != NULL)
+  if (chain.string != NULL && string != NULL)
 	{
-		UINT size = (strlen(string) + 1) + (strlen(chain.string) + 1);
+		UINT size = strlen(string) + (strlen(chain.string) + 1);
 		if (size > capacity)
 		{
-		    strcat_s(string, size, chain.string);
-        }
+			char* tmp = new char[size];
+			strcpy_s(tmp, size, string);
+
+			strcpy_s(string, size, chain.string);
+			strcpy_s(chain.string, size, tmp);
+
+
+			strcat_s(string, size, chain.string);
+
+			delete[] tmp;
+		}
+		else
+			strcat_s(string, capacity, chain.string);
 	}
-    
+
 	return (*this);
 }

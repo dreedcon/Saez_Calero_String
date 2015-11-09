@@ -29,11 +29,11 @@ public:
 	~P2String();
 
 	//getters
-	UINT GetSize(const char*)const;
+	UINT GetCapacity()const;
 	const char* C_str()const;
    
-	UINT length(const char*)const;
-	UINT length(const P2String&)const;
+	
+	UINT Length()const;
 	
 	//operators
 	bool operator == (const char*)const;
@@ -42,18 +42,18 @@ public:
 	bool operator != (const char*)const;
 	bool operator != (const P2String&)const;
 	
-	const P2String operator = (const char*);
-	const P2String operator = (const P2String&);
+	const P2String& operator = (const char*);
+	const P2String& operator = (const P2String&);
 	
-	const P2String operator +=(const P2String&);
-	const P2String operator +=(const char*);
+	const P2String& operator +=(const P2String&);
+	const P2String& operator +=(const char*);
 
 	//utility functions
 	void Clear();
 	bool Empit()const;
 
-	const P2String Prefix(const char*);
-	const P2String Prefix(const P2String&);
+	const P2String& Prefix(const char*);
+	const P2String& Prefix(const P2String&);
 		
 
 };
