@@ -49,7 +49,7 @@ public:
 	const P2String operator +=(const char*);
 
 	//utility functions
-	const void Clear()const;
+	void Clear();
 	bool Empit()const;
 
 	const P2String Prefix(const char*);

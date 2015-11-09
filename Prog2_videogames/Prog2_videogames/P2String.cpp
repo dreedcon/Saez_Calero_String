@@ -231,7 +231,7 @@ const P2String P2String::operator+=(const P2String& chain)
 
 //utility functions
 
-const void P2String::Clear()const
+void P2String::Clear()
 {
    string[0] = '\0';
 }
