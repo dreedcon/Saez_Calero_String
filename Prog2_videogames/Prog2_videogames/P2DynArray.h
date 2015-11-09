@@ -42,6 +42,8 @@ public:
 	{
 		return capacity
 	}
+     
+    //hacer at -----> future At()
 
 	const char* C_str()const
 	{
@@ -53,6 +55,12 @@ public:
 	{
 		if (capacity >= elements)
 		DATA[elements + 1] = _arry;
+		else
+		{
+		 
+		
+		
+		}
 	}
 
 	 void Clear()
