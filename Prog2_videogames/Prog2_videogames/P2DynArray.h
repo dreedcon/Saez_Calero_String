@@ -1,7 +1,7 @@
 //dyn array vector stl para el proximo dia
-#include "Utilities.h"
 #ifndef _DYNARRAY_H_
 #define _DYNARRAY_H_
+#include "Utilities.h"
 
 #define BLOCK 32
 
@@ -24,9 +24,19 @@ public:
 	//constructor copia
 	P2DynArray(const P2DynArray& _arry) : elements(_arry.elements)
 	{
-		mem_capacity = MAX(BLOCK, _array.capacity)
+		mem_capacity = MAX(BLOCK, _arry.elements)
 		_array = new DATA[capacity];
 		memccpy(_array, _arry._array, _arry.elements * sizeof(DATA));
+	}
+	//constructor reserva de memoria
+	P2DynArray(UINT new_capacity)
+	{
+		if (capacity < new_capacity)
+		{
+         capacity = new_capacity;
+		}
+		_array = new DATA[capacity];
+	
 	}
 
 	//destructor
@@ -59,9 +69,9 @@ public:
 		}
 		else
 		{
-		 
-		//future else
-		
+			DATA* tmp = _array;
+			_array = new DATA[_arry];
+			memcpy(data, tmp, elements*sizeof(DATA));
 		}
 	}
 
@@ -79,7 +89,13 @@ public:
 
 };
 
-
+//hacer operador[];
+//hacer operador=;
+//hacer pop_back();retorna el ultimo elemento y lo borra
+//----------------------------------------------------------------------------------
+//shink:to_fit() si sobra memoria ha de asegurarnos que esa memoria se borra
+//flip()es como un swap
+//insert(pos,data)le pasas una posicion y le insertas algo
 
 
 
