@@ -53,8 +53,10 @@ public:
 	//utilities
 	void Phusback(const DATA& _arry)
 	{
-		if (capacity >= elements)
-		DATA[elements + 1] = _arry;
+		if (capacity > elements)
+		{
+          DATA[elements + 1] = _arry;
+		}
 		else
 		{
 		 
