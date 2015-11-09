@@ -25,34 +25,22 @@ public:
 	P2DynArray(const P2DynArray& _arry) : elements(_arry.elements)
 	{
 		mem_capacity = MAX(BLOCK, _array.capacity)
-		_array = new DATA[mem_capacity];
+		_array = new DATA[capacity];
 		memccpy(_array, _arry._array, _arry.elements * sizeof(DATA));
 	}
 
 	//destructor
 	~P2DynArray()
 	{
-		if (capacity == NULL)
+		if (capacity != NULL)
 			delete[] _array;
 	}
 
-	void Phusback(const DATA& _arry)
-	{
-		if (elements == capacity)
-		{
-			_array = new DATA[capacity + BLOCK];
-		}
-		DATA[elements + 1] = _arry;
-    }
-
+	
+	//getters
 	UINT Getcapacity()const
 	{
 		return capacity
-	}
-	
-	UINT GetElements()const
-	{
-	return capacity;
 	}
 
 	const char* C_str()const
@@ -60,15 +48,21 @@ public:
 	return _array;
 	}
 	
+	//utilities
+	void Phusback(const DATA& _arry)
+	{
+		if (capacity >= elements)
+		DATA[elements + 1] = _arry;
+	}
 
 	 void Clear()
 	 {
 		elements = 0;
 	 }
 
-	bool Empyt()
+	bool Empyt()const
 	{
-	return elements == 0
+		return elements == 0;
     }
 
 
