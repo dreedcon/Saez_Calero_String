@@ -10,8 +10,8 @@ class P2DynArray
 {
 
 private:
-	UINT capacity = 0;
-	UINT elements = 0;
+	uint capacity = 0;
+	uint elements = 0;
 	DATA* _array = NULL;
 
 public:
@@ -29,7 +29,7 @@ public:
 		memccpy(_array, _arry._array, _arry.elements * sizeof(DATA));
 	}
 	//constructor reserva de memoria
-	P2DynArray(UINT new_capacity)
+	P2DynArray(uint new_capacity)
 	{
 		if (capacity < new_capacity)
 		{
@@ -48,7 +48,7 @@ public:
 
 	
 	//getters
-	UINT Getcapacity()const
+	uint Getcapacity()const
 	{
 		return capacity
 	}

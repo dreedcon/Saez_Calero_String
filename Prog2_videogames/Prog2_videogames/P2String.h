@@ -1,9 +1,7 @@
-#include "Utilities.h"
-
-
 #ifndef _STRING_
 #define _STRING_
 
+#include "Utilities.h"
 
 
 class P2String
@@ -21,7 +19,7 @@ public:
 	//constructor copia cadena
 	P2String(const char*);
 	//constructor copia capacity
-	P2String(UINT capacity);
+	P2String(uint capacity);
 	//constructor puntero a la cadena
 	P2String(const P2String&);
 
@@ -29,11 +27,11 @@ public:
 	~P2String();
 
 	//getters
-	UINT GetCapacity()const;
+	uint GetCapacity()const;
 	const char* C_str()const;
    
 	
-	UINT Length()const;
+	uint Length()const;
 	
 	//operators
 	bool operator == (const char*)const;

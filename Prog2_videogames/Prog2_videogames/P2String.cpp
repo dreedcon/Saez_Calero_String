@@ -26,7 +26,7 @@ P2String::P2String(const char* _string)
 }
 
 //constructor copia de capacidad
-P2String::P2String(UINT _capacity)
+P2String::P2String(uint _capacity)
 {
 	if (capacity > 0)
 	{
@@ -99,7 +99,7 @@ bool P2String::operator!=(const P2String& chain)const
 
 const P2String& P2String::operator=(const char*chain)
 {
-	UINT size = strlen(chain) + 1;
+	uint size = strlen(chain) + 1;
 
 	if (size > capacity)
 	{
@@ -114,7 +114,7 @@ const P2String& P2String::operator=(const char*chain)
 
 const P2String& P2String::operator=(const P2String& chain)
 {
-	UINT size = chain.capacity + 1;
+	uint size = chain.capacity + 1;
 
 	if (size > capacity)
 	{
@@ -133,7 +133,7 @@ const P2String& P2String::operator+=(const char* chain)
 
 	if (chain != NULL && string != NULL)
 	{
-		UINT size = strlen(string)  + (strlen(chain) + 1);
+		uint size = strlen(string) + (strlen(chain) + 1);
 
 		if (size > capacity)
 		{   
@@ -156,7 +156,8 @@ const P2String& P2String::operator+=(const P2String& chain)
 {
 	if (chain.string != NULL && string != NULL)
 	{
-		UINT size = strlen(string) + (strlen(chain.string) + 1);
+		uint size = strlen(string) + (strlen(chain.string) + 1);
+		
 		if (size > capacity)
 		{    
 			 char* tmp = new char[size];
@@ -184,7 +185,7 @@ void P2String::Clear()
 
 bool P2String::Empit()const
 {
-	UINT size = strlen(string);
+	uint size = strlen(string);
 
 	return (size == NULL);
 
@@ -194,7 +195,7 @@ const P2String& P2String::Prefix(const char* chain)
 {
   if (chain != NULL && string != NULL)
 	{
-		UINT size = strlen(string) + (strlen(chain) + 1);
+		uint size = strlen(string) + (strlen(chain) + 1);
 
 		if (size > capacity)
 		{
@@ -217,7 +218,8 @@ const P2String& P2String::Prefix(const P2String& chain)
 {
   if (chain.string != NULL && string != NULL)
 	{
-		UINT size = strlen(string) + (strlen(chain.string) + 1);
+		uint size = strlen(string) + (strlen(chain.string) + 1);
+		
 		if (size > capacity)
 		{
 			char* tmp = new char[size];
