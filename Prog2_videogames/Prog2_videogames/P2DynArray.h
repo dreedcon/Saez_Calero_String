@@ -30,7 +30,7 @@ public:
 	}
 	
 	//constructor reserva de memoria 
-	P2DynArray(uint new_capacity)
+	P2DynArray(const uint new_capacity)
 	{
 		if (mem_capacity < new_capacity)
 		{
@@ -50,32 +50,49 @@ public:
 	//getters
 	uint Getcapacity()const
 	{
-		return mem_capacity
+		return mem_capacity;
 	}
      
-    //hacer at -----> future At()
-
-	const P2DynArray* C_str()const
+    const P2DynArray* C_str()const
 	{
 	    return data;
 	}
 	
-	//utilities
-	void Phusback(const VAR& _array)
-	{
-		if (mem_capacity > num_elements)
-		{
-          DATA[elements++] = _array;
-		}
-		else
-		{
-			VAR* tmp = _array;
-			_array = new VAR[_array];
-			memcpy(data, tmp, num_elements*sizeof(VAR))
-			
+	//operators
 
-			delete[] _array;
+	VAR& operator[](const uint& position)
+	{
+		if (position >= num_elements)
+		assert(position < num_elements);
+		else
+		return data[position];
+
+	}
+
+     //utilities
+	
+	//At() le damos una posicion y nos dice que hay
+	VAR& At(const uint& position)
+	{
+		if (position >= num_elements)
+			printf("out of order \n");
+		else
+			return data[position];
+
+	}
+
+	
+	//Pushback() le metemos un elemento detras 
+	void Pushback(const VAR& _array)
+	{
+		if (num_elements == mem_capacity)
+		{
+			VAR* tmp = data;
+			data = new VAR[mem_capacity + BLOCK];
+			memcpy(data, tmp, num_elements*sizeof(VAR));
+			delete[] data;
 		}
+		data[num_elements++] = _array;
 	}
 
 	 void Clear()
@@ -87,7 +104,7 @@ public:
 	{
 		return elements == 0;
     }
-
+     
 
 
 };

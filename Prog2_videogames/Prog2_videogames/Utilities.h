@@ -1,6 +1,6 @@
 #ifndef _UTILITIES_
 #define _UTILITIES_
-
+#include <assert.h>
 
 #define NULL 0
 #define MIN(a,b)  ((a)<(b)) ? a : b
