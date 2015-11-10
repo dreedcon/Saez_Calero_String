@@ -6,14 +6,14 @@ int main()
 {
 	
 	P2String prueba("hola");
-	P2String prueba1("hola");
+	P2String prueba1("mundo");
 	const char* a = "mundo";
 
-	prueba += a;
+	prueba += prueba1;
 	//prueba.Prefix(prueba1);
 	
 	
-	//prueba.Clear();
+	//prueba1.Clear();
 	//prueba.Empit();
 	
 	

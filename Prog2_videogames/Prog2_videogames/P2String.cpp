@@ -138,12 +138,10 @@ const P2String& P2String::operator+=(const char* chain)
 		if (size > capacity)
 		{   
 			char* tmp = new char[size];
-			strcpy_s(tmp, size, chain);
+			strcpy_s(tmp, size, string);
+			strcpy_s(string, size, tmp);
 			
-			strcpy_s(string, size, chain);
-			chain = tmp;
 			strcat_s(string, size, chain);
-			
 			delete[] tmp;
 		} 
 		else
@@ -151,7 +149,7 @@ const P2String& P2String::operator+=(const char* chain)
 			strcat_s(string, capacity, chain);
 		}
 	}
-	return (*this);
+	return *this;
 }
 
 const P2String& P2String::operator+=(const P2String& chain)
@@ -164,19 +162,15 @@ const P2String& P2String::operator+=(const P2String& chain)
 			 char* tmp = new char[size];
 			 strcpy_s(tmp, size, string);
 			 
-			 strcpy_s(string,size,chain.string);
-			 strcpy_s(chain.string, size, tmp);
-			
-			 
+			 strcpy_s(string,size,tmp);
 			 strcat_s(string, size, chain.string);
-			 
 			 delete[] tmp;
 		}
 		else
 		 strcat_s(string, capacity, chain.string);
-		}
+	}
 
-	return (*this);
+	return *this;
 }
 
 //utility functions
@@ -209,16 +203,14 @@ const P2String& P2String::Prefix(const char* chain)
 
 			strcpy_s(string, size, chain);
 			chain = tmp;
+			
 			strcat_s(string, size, chain);
-
-			delete[] tmp;
+            delete[] tmp;
 		}
 		else
-		{
-			strcat_s(string, capacity, chain);
-		}
-	}
-	return (*this);
+	    strcat_s(string, capacity, chain);
+  }
+	return *this;
 }
 
 const P2String& P2String::Prefix(const P2String& chain)
@@ -230,18 +222,17 @@ const P2String& P2String::Prefix(const P2String& chain)
 		{
 			char* tmp = new char[size];
 			strcpy_s(tmp, size, string);
+			
 
 			strcpy_s(string, size, chain.string);
 			strcpy_s(chain.string, size, tmp);
 
-
-			strcat_s(string, size, chain.string);
-
-			delete[] tmp;
+            strcat_s(string, size, chain.string);
+            delete[] tmp;
 		}
 		else
 			strcat_s(string, capacity, chain.string);
 	}
 
-	return (*this);
+	return *this;
 }
