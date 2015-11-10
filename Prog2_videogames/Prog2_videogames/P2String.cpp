@@ -39,7 +39,7 @@ P2String::P2String(uint _capacity)
 //constructor copia
 P2String::P2String(const P2String& _string)
 { 
-	UINT size = strlen(_string.string) + 1;
+	uint size = strlen(_string.string) + 1;
 	string = new char[size];
 	strcpy_s(string, size , _string.string);
 }
@@ -53,7 +53,7 @@ P2String::~P2String()
 }
 
 //getters 
-UINT P2String::GetCapacity()const
+uint P2String::GetCapacity()const
 {
      return capacity;
 }
@@ -64,7 +64,7 @@ const char* P2String::C_str()const
 	return (string);
 }
 
-UINT P2String::Length()const
+uint P2String::Length()const
 {
 	
 	int count = 0;
@@ -162,9 +162,11 @@ const P2String& P2String::operator+=(const P2String& chain)
 		{    
 			 char* tmp = new char[size];
 			 strcpy_s(tmp, size, string);
-			 
+			 string = new char[size];
+			
 			 strcpy_s(string,size,tmp);
 			 strcat_s(string, size, chain.string);
+			 
 			 delete[] tmp;
 		}
 		else
@@ -224,13 +226,14 @@ const P2String& P2String::Prefix(const P2String& chain)
 		{
 			char* tmp = new char[size];
 			strcpy_s(tmp, size, string);
-			
+			string = new char[size];
 
 			strcpy_s(string, size, chain.string);
 			strcpy_s(chain.string, size, tmp);
 
             strcat_s(string, size, chain.string);
-            delete[] tmp;
+           
+			delete[] tmp;
 		}
 		else
 			strcat_s(string, capacity, chain.string);

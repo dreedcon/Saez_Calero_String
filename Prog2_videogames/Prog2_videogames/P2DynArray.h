@@ -5,73 +5,76 @@
 
 #define BLOCK 32
 
-template<class DATA>
+template<class VAR>
 class P2DynArray
 {
 
 private:
-	uint capacity = 0;
-	uint elements = 0;
-	DATA* _array = NULL;
+	uint mem_capacity = 0;
+	uint num_elements = 0;
+	VAR* data = NULL;
 
 public:
 	//constructor vacio
-	P2DynArray() : capacity(BLOCK)
+	P2DynArray() : mem_capacity(BLOCK)
 	{
-		_array = new DATA[BLOCK];
+		data = new VAR[BLOCK];
 	}
 
 	//constructor copia
-	P2DynArray(const P2DynArray& _arry) : elements(_arry.elements)
+	P2DynArray(const P2DynArray& _array) :num_elements(_array.num_elements)
 	{
-		mem_capacity = MAX(BLOCK, _arry.elements)
-		_array = new DATA[capacity];
-		memccpy(_array, _arry._array, _arry.elements * sizeof(DATA));
+		mem_capacity = MAX(BLOCK, _arry.elements);
+		data = new VAR[mem_capacity];
+		memccpy(_array, _array.data, _array.num_elements * sizeof(VAR));
 	}
-	//constructor reserva de memoria
+	
+	//constructor reserva de memoria 
 	P2DynArray(uint new_capacity)
 	{
-		if (capacity < new_capacity)
+		if (mem_capacity < new_capacity)
 		{
-         capacity = new_capacity;
+         mem_capacity = new_capacity;
 		}
-		_array = new DATA[capacity];
-	
+		data = new VAR[mem_capacity];
 	}
 
 	//destructor
 	~P2DynArray()
 	{
-		if (capacity != NULL)
-			delete[] _array;
+		if (mem_capacity != NULL)
+			delete[] data;
 	}
 
 	
 	//getters
 	uint Getcapacity()const
 	{
-		return capacity
+		return mem_capacity
 	}
      
     //hacer at -----> future At()
 
-	const char* C_str()const
+	const P2DynArray* C_str()const
 	{
-	return _array;
+	    return data;
 	}
 	
 	//utilities
-	void Phusback(const DATA& _arry)
+	void Phusback(const VAR& _array)
 	{
-		if (capacity > elements)
+		if (mem_capacity > num_elements)
 		{
-          DATA[elements + 1] = _arry;
+          DATA[elements++] = _array;
 		}
 		else
 		{
-			DATA* tmp = _array;
-			_array = new DATA[_arry];
-			memcpy(data, tmp, elements*sizeof(DATA));
+			VAR* tmp = _array;
+			_array = new VAR[_array];
+			memcpy(data, tmp, num_elements*sizeof(VAR))
+			
+
+			delete[] _array;
 		}
 	}
 

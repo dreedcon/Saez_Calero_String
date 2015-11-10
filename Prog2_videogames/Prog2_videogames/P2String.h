@@ -10,7 +10,7 @@ class P2String
 private:
 
     char* string;
-	UINT capacity;
+	uint capacity;
 
 public:
 
