@@ -69,18 +69,24 @@ public:
 
 	}
 
-     //utilities
-	
-	//At() le damos una posicion y nos dice que hay
-	VAR& At(const uint& position)
+	const P2DynArray& operator=(const P2DynArray& _array)
 	{
-		if (position >= num_elements)
-			printf("out of order \n");
-		else
-			return data[position];
+		if (_array.num_elements > mem_capacity)
+		{
+			delete[] data;
+			mem_capacity = _array.mem_capacity;
+			data = new VAR[mem_capacity];
 
+			memcpy(data, _array.data, num_elements*sizeof(VAR));
+		}
+		else
+		memcpy(data, _array.data, num_elements*sizeof(VAR));
+
+		return *this;
+	
 	}
 
+     //utilities
 	
 	//Pushback() le metemos un elemento detras 
 	void Pushback(const VAR& _array)
@@ -94,8 +100,51 @@ public:
 		}
 		data[num_elements++] = _array;
 	}
+	
+	//At() le damos una posicion y nos dice que hay
+	VAR& At(const uint& position)
+	{
+		if (position >= num_elements)
+			printf("out of order \n");
+		else
+			return data[position];
 
-	 void Clear()
+	}
+
+	//Popback() devuelve el ultimo elemento y lo borra
+	void Popback()
+	{
+		if (num_elements == 0)
+			printf("there are zero elements \n");
+		else
+		num_elements--;
+	}
+	
+	//si sobra memoria ha de asegurarnos que esa memoria se borra
+	void shink_to_fit()
+	{
+		if (num_elements == mem_capacity)
+		{
+			printf("already are equal\n");
+		}
+		else
+		{
+			VAR* tmp = data;
+			mem_capacity = num_elements - 1;
+			data = new VAR[mem_capacity];
+			memcpy(data, tmp, num_elements*sizeof(VAR));
+			delete[] data;
+		}
+
+    }
+    
+	//le pasas una posicion y le insertas algo
+	void Insert(const uint& pos, const VAR& _array)
+	{
+	
+	}
+	
+    void Clear()
 	 {
 		elements = 0;
 	 }
@@ -109,13 +158,9 @@ public:
 
 };
 
-//hacer operador[];
-//hacer operador=;
-//hacer pop_back();retorna el ultimo elemento y lo borra
 //----------------------------------------------------------------------------------
-//shink:to_fit() si sobra memoria ha de asegurarnos que esa memoria se borra
 //flip()es como un swap
-//insert(pos,data)le pasas una posicion y le insertas algo
+//insert(pos,data)
 
 
 

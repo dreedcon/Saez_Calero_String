@@ -4,11 +4,16 @@
 
 int main()
 { 
-	P2DynArray<char*> prueba(20);
+	P2DynArray<char*> prueba(0);
+	P2DynArray<char*> prueba1(2);
 	prueba.Pushback("hola");
-	prueba[2];
+	prueba1.Pushback("mundo");
+	prueba1.Pushback("alexis");
 
-	
+	prueba[0];
+	prueba.shink_to_fit();
+	prueba.Getcapacity();
+	prueba.Flip();
 	/*
 	P2String prueba("hola");
 	P2String prueba1("mundo");
