@@ -101,7 +101,7 @@ public:
 	}
 	
 	//At() le damos una posicion y nos dice que hay
-	VAR& At(const uint position)
+	VAR& At(uint position)
 	{
 		if (position >= num_elements)
 			printf("out of order \n");
@@ -140,27 +140,41 @@ public:
 	//le pasas una posicion y le insertas algo
 	void Insert(const uint& pos, const VAR& _array)
 	{
-		for (uint i = num_elements; i > pos; --i)
-		{
-			data[i] = data[i - 1];
-		}
-		data[pos] = _array;
 		num_elements++;
-   }
-	
-    void Clear()
-	 {
-		elements = 0;
-	 }
+		VAR* tmp = data;
+		
+		if (mem_capacity < num_elements)
+		{
+			data = new VAR[num_elements];
+			mem_capacity++;
+			memcpy(data, tmp, (pos)*sizeof(VAR));
+			for (uint i = num_elements; i>position; i--)
+			{
+				data[i] = tmp[i - 1];
+			}
+			delete[] tmp;
+		}
+		else
+		{
+			for (uint i = num_elements; i > pos; --i)
+			{
+				data[i] = data[i - 1];
+			}
+			data[pos] = _array;
+			num_elements++;
+		}
 
-	bool Empyt()const
-	{
-		return elements == 0;
-    }
-     
-	
+		void Clear()
+		{
+			elements = 0;
+		}
 
+		bool Empyt()const
+		{
+			return elements == 0;
+		}
 
+		}
 };
 
 //----------------------------------------------------------------------------------
