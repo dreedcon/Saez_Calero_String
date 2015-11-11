@@ -60,7 +60,7 @@ public:
 	
 	//operators
 
-	const VAR& operator[](const uint& position)
+	const VAR& operator[](uint position)
 	{
 		
 		assert(position < num_elements);
