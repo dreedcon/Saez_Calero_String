@@ -60,11 +60,10 @@ public:
 	
 	//operators
 
-	VAR& operator[](const uint& position)
+	const VAR& operator[](const uint& position)
 	{
-		if (position >= num_elements)
+		
 		assert(position < num_elements);
-		else
 		return data[position];
 
 	}
@@ -96,13 +95,12 @@ public:
 			VAR* tmp = data;
 			data = new VAR[mem_capacity + BLOCK];
 			memcpy(data, tmp, num_elements*sizeof(VAR));
-			delete[] data;
 		}
 		data[num_elements++] = _array;
 	}
 	
 	//At() le damos una posicion y nos dice que hay
-	VAR& At(const uint& position)
+	VAR& At(const uint position)
 	{
 		if (position >= num_elements)
 			printf("out of order \n");
@@ -133,7 +131,6 @@ public:
 			mem_capacity = num_elements - 1;
 			data = new VAR[mem_capacity];
 			memcpy(data, tmp, num_elements*sizeof(VAR));
-			delete[] data;
 		}
 
     }
@@ -141,8 +138,13 @@ public:
 	//le pasas una posicion y le insertas algo
 	void Insert(const uint& pos, const VAR& _array)
 	{
-	
-	}
+		for (uint i = num_elements; i > pos; --i)
+		{
+			data[i] = data[i - 1];
+		}
+		data[pos] = _array;
+		num_elements++;
+   }
 	
     void Clear()
 	 {
@@ -154,6 +156,7 @@ public:
 		return elements == 0;
     }
      
+	
 
 
 };

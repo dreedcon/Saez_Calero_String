@@ -1,19 +1,14 @@
-﻿Build started 11/11/2015 0:58:12.
-     1>Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 11/11/2015 14:15:15.
+     1>Proyecto "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\soft\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(143): warning C4101: 'tmp' : unreferenced local variable
-                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(142) : while compiling class template member function 'void P2DynArray<char *>::Flip(void)'
-                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(16) : see reference to function template instantiation 'void P2DynArray<char *>::Flip(void)' being compiled
-                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(7) : see reference to class template instantiation 'P2DynArray<char *>' being compiled
-     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(70): warning C4715: 'P2DynArray<char *>::operator[]' : not all control paths return a value
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
+         C:\soft\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
          Debug\P2String.obj
-         Prog2_videogames.vcxproj -> C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
-     1>Done Building Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build target(s)).
+         Prog2_videogames.vcxproj -> D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
+     1>Compilación del proyecto terminada "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:01.49
+Tiempo transcurrido 00:00:00.65
