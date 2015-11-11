@@ -95,6 +95,7 @@ public:
 			VAR* tmp = data;
 			data = new VAR[mem_capacity + BLOCK];
 			memcpy(data, tmp, num_elements*sizeof(VAR));
+			delete[] tmp;
 		}
 		data[num_elements++] = _array;
 	}
@@ -128,9 +129,10 @@ public:
 		else
 		{
 			VAR* tmp = data;
-			mem_capacity = num_elements - 1;
+			mem_capacity = (num_elements - 1)*sizeof(VAR);
 			data = new VAR[mem_capacity];
 			memcpy(data, tmp, num_elements*sizeof(VAR));
+			delete[] tmp;
 		}
 
     }
