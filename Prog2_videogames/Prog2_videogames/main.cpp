@@ -6,8 +6,15 @@
 
 int main()
 {
-
-
+	list<int> prueba;
+	prueba.Pushback(3);
+	prueba.Pushback(4);
+	prueba.Pushback(5);
+	prueba.push_front(2);
+	
+	prueba.size();
+	prueba.clear();
+	
 
 	//prueba1.Insert(1, "x");
 	//prueba1.shink_to_fit();
@@ -31,4 +38,5 @@ int main()
 
 	*/
 	system("pause");
+
 }

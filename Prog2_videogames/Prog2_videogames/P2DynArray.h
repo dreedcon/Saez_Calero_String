@@ -142,7 +142,7 @@ public:
 	{
 		num_elements++;
 		VAR* tmp = data;
-		
+
 		if (mem_capacity < num_elements)
 		{
 			data = new VAR[num_elements];
@@ -163,6 +163,7 @@ public:
 			data[pos] = _array;
 			num_elements++;
 		}
+	}
 
 		void Clear()
 		{
@@ -174,7 +175,7 @@ public:
 			return elements == 0;
 		}
 
-		
+	
 };
 
 //----------------------------------------------------------------------------------
