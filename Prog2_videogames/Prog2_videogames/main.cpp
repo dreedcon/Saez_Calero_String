@@ -5,12 +5,10 @@
 
 
 int main()
-{ 
-	node<char*> prueba1;
-	List<char*> prueba;
-	
-	
-	
+{
+
+
+
 	//prueba1.Insert(1, "x");
 	//prueba1.shink_to_fit();
 	/*
@@ -21,7 +19,7 @@ int main()
 	prueba.Prefix(prueba1);
 	//prueba1.Clear();
 	//prueba.Empit();
-	
+
 	P2DynArray<char*> prueba(0);
 	P2DynArray<char*> prueba1(4);
 	prueba.Pushback("hola");
@@ -30,7 +28,7 @@ int main()
 	prueba1.Pushback("c");
 	prueba1.Pushback("d");
 	prueba1.Pushback("d");
-	
+
 	*/
-	//system("pause");
+	system("pause");
 }
