@@ -24,6 +24,9 @@
     <ClInclude Include="P2DynArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="P2Linked_List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="P2String.cpp">
