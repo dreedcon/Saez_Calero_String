@@ -1,4 +1,3 @@
-//dyn array vector stl para el proximo dia
 #ifndef _DYNARRAY_H_
 #define _DYNARRAY_H_
 #include "Utilities.h"
@@ -178,9 +177,6 @@ public:
 	
 };
 
-//----------------------------------------------------------------------------------
-//flip()es como un swap
-//insert(pos,data)
 
 
 

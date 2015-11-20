@@ -28,6 +28,32 @@ public:
 	list(){}
 	~list(){ clear(); }
 	
+
+
+	//metodes\\
+	
+	node<VAR>* Front()
+	{
+		return start;
+	
+	}
+	
+	node<VAR>* End()
+	{
+		node<VAR>* tmp = start;
+		while (tmp->next)
+		{
+			tmp = tmp->next;
+		}
+	  
+		return tmp;
+	}
+
+	//utility metodes\\
+
+
+
+	//añade uno al final
 	void Pushback(const VAR& new_data)
 	{ 
 		node<VAR>* new_node = new node<VAR>(new_data);
@@ -49,9 +75,73 @@ public:
 		
 		}
 	}
-	
-	
 
+	//añade uno al principio
+	void push_front(const VAR& new_data)
+	{
+		node<VAR>* new_node = new node<VAR>(new_data);
+
+		if (start == NULL)
+		{
+			start = new_node;
+			new_node->next = NULL;
+		}
+		else
+		{
+			node<VAR>* tmp = start;
+
+			start = new_node;
+			new_node->next = tmp;
+		}
+	}
+
+	//elimina uno del final
+	int pop_back(VAR& data)
+	{
+		node<VAR>* tmp = start;
+		
+		if (start == NULL)
+		{
+			printf("there are zero nodes \n");
+        }
+		else
+		{
+		node<VAR>* tmp1 = tmp;
+	   while (tmp->next)
+		{
+		  tmp1 = tmp;
+		  tmp = tmp->next;
+		}
+		tmp1 = tmp1->next = NULL;
+		data = tmp->value;
+		delete tmp;
+		}
+	    return data;
+	 }
+
+	//elimina uno del principio
+	int pop_front(VAR& data)
+	{
+		node<VAR>* tmp = start;
+		if (start == NULL)
+		{
+			printf("there are zero nodes \n");
+		}
+		else
+		{
+			node<VAR>*tmp1;
+			start = tmp->next;
+			tmp1 = tmp;
+			data = tmp->value;
+			start = tmp1->next;
+			
+			delete tmp;
+		}
+	
+		return data;
+	}
+	
+	//devuelve de cuantos nods estas compuesto el tamaño de la lista
 	int size()const
 	{
 		uint count = 0;
@@ -65,6 +155,7 @@ public:
 		return count;
 	}
 	
+	//vacia la lista
 	void clear()
 	{
 		node<VAR>* tmp = start;
@@ -78,31 +169,17 @@ public:
 			delete tmp1;
 			
 		}
-		start = NULL;
-		}
 	
+		start = NULL;
+	}
+	
+	//comprueba si esta vacia la lista
 	bool Empty()const
 	{
 	   return start == NULL;
 	}
 
-	void push_front(const VAR& new_data)
-	{
-		node<VAR>* new_node = new node<VAR>(new_data);
-
-		if (start == NULL)
-		{
-		start = new_node;
-		new_node->next = NULL;
-		}
-		else
-		{
-			node<VAR>* tmp = start;
-			
-			start = new_node;
-			new_node->next = tmp;
-		}
-	}
+	
 
 
 
@@ -112,10 +189,6 @@ public:
 
 
 /*
-front()es el start return const
-back()y back es el ultimo return const
-pop_back() le quitamos uno al final retorna la data del node
-pop_front()quitas el nodo principal y retorna la data del node
 ---------------------------------------------------------------------
 insert()coge una posicion y añade uno
 remove()coge uno y lo liquida
