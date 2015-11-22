@@ -29,7 +29,7 @@ public:
 	}
 	
 	//constructor reserva de memoria 
-	P2DynArray(const uint new_capacity)
+	P2DynArray(uint new_capacity)
 	{
 		if (mem_capacity < new_capacity)
 		{

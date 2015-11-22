@@ -1,8 +1,12 @@
-﻿Build started 20/11/2015 21:03:24.
+﻿Build started 22/11/2015 11:41:44.
      1>Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(186): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(175) : while compiling class template member function 'void list<int>::remove(uint)'
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(16) : see reference to function template instantiation 'void list<int>::remove(uint)' being compiled
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(10) : see reference to class template instantiation 'list<int>' being compiled
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
          Debug\P2String.obj
@@ -11,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.07
+Time Elapsed 00:00:00.81

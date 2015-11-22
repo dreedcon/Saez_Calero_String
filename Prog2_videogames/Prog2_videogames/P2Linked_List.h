@@ -66,7 +66,7 @@ public:
 		else
 		{
 			node<VAR>* tmp = start;
-			while (tmp->next != NULL)
+			while (tmp->next)
 			{
 				tmp = tmp->next;
 			}
@@ -119,6 +119,7 @@ public:
 	    return data;
 	 }
 
+
 	//elimina uno del principio
 	int pop_front(VAR& data)
 	{
@@ -140,7 +141,62 @@ public:
 	
 		return data;
 	}
+
+	//inserta uno en una posicion
+	void Insert(const VAR& new_data, uint position)
+	{
+		node<VAR>* new_node = new node<VAR>(new_data);
+		node<VAR>* tmp = start;
+		node<VAR>*tmp1 = tmp;
+		node<VAR>* tmp2;
+		if (start == NULL)
+		{
+			start = new_node;
+			new_node->next = NULL;
+		}
+		else
+		
+		for (int count = 0; count < position; count++)
+		{
+		tmp1 = tmp;
+		tmp = tmp->next;
+		}
+		tmp2 = tmp;
+		tmp = new_node;
+		tmp1->next = tmp;
+		tmp->next = tmp2;
+
+
 	
+		
+	}
+
+	//le das la posicion de uno y lo liquida
+	void remove(uint position)
+	{
+		node<VAR>* tmp = start;
+
+		if (start == NULL)
+		{
+			printf("there are zero nodes \n");
+		}
+		else
+		{
+			node<VAR>* tmp1 = tmp;
+			node<VAR>* tmp2;
+			for (int count = 0; count < position; count++)
+			{
+				tmp1 = tmp;
+				tmp = tmp->next;
+			}
+			tmp2 = tmp;
+			tmp = tmp1;
+			tmp->next = tmp2->next;
+
+			delete tmp2;
+		}
+	}
+
 	//devuelve de cuantos nods estas compuesto el tamaño de la lista
 	int size()const
 	{

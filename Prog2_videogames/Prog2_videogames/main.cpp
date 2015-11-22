@@ -13,9 +13,11 @@ int main()
 	prueba.Pushback(5);
 	prueba.push_front(2);
 	
+	prueba.remove(3);
 	
 	//prueba.End();
-	//prueba.Front();
+	//prueba.Insert(1, 4);
+    //prueba.Front();
 	//prueba.pop_back(a);
 	//prueba.pop_front(a);
 	//prueba.size();
