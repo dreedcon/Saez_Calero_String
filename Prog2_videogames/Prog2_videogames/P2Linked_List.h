@@ -151,24 +151,20 @@ public:
 		node<VAR>* tmp2;
 		if (start == NULL)
 		{
-			start = new_node;
-			new_node->next = NULL;
+			printf("there are zero nodes \n");
 		}
 		else
-		
-		for (int count = 0; count < position; count++)
 		{
-		tmp1 = tmp;
-		tmp = tmp->next;
+			for (int count = 0; count < position; count++)
+			{
+				tmp1 = tmp;
+				tmp = tmp->next;
+			}
+			tmp2 = tmp;
+			tmp = new_node;
+			tmp1->next = tmp;
+			tmp->next = tmp2;
 		}
-		tmp2 = tmp;
-		tmp = new_node;
-		tmp1->next = tmp;
-		tmp->next = tmp2;
-
-
-	
-		
 	}
 
 	//le das la posicion de uno y lo liquida
