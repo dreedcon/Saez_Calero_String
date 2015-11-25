@@ -5,9 +5,7 @@
 template<class VAR>
 struct node
 {
-    //hacer private los punteros y public el value
 	VAR value = NULL;
-   //hacer gets recuerda sergio son const
 	node<VAR>* next = NULL;
 	
 	node(const VAR& _data){ value = _data; }
@@ -19,12 +17,11 @@ struct node
 template<class VAR>
 class list
 {
+
 public:
-	
-	//hacer get recuerda sergio son const
+
 	node<VAR>* start = NULL;
 	
-
 	list(){}
 	~list(){ clear(); }
 	
@@ -54,7 +51,7 @@ public:
 
 
 	//añade uno al final
-	void Pushback(const VAR& new_data)
+	void Push_back(const VAR& new_data)
 	{ 
 		node<VAR>* new_node = new node<VAR>(new_data);
 
@@ -96,13 +93,13 @@ public:
 	}
 
 	//elimina uno del final
-	int pop_back(VAR& data)
+	bool pop_back(VAR& data)
 	{
 		node<VAR>* tmp = start;
 		
 		if (start == NULL)
 		{
-			printf("there are zero nodes \n");
+			return false;
         }
 		else
 		{
@@ -115,18 +112,20 @@ public:
 		tmp1 = tmp1->next = NULL;
 		data = tmp->value;
 		delete tmp;
+		return data;
+		return true;
 		}
-	    return data;
+	   
 	 }
 
 
 	//elimina uno del principio
-	int pop_front(VAR& data)
+	bool pop_front(VAR& data)
 	{
 		node<VAR>* tmp = start;
 		if (start == NULL)
 		{
-			printf("there are zero nodes \n");
+			return false;
 		}
 		else
 		{
@@ -137,13 +136,13 @@ public:
 			start = tmp1->next;
 			
 			delete tmp;
+			return data;
+			return true;
 		}
-	
-		return data;
 	}
 
 	//inserta uno en una posicion
-	void Insert(const VAR& new_data, uint position)
+	bool Insert(const VAR& new_data, uint position)
 	{
 		node<VAR>* new_node = new node<VAR>(new_data);
 		node<VAR>* tmp = start;
@@ -151,7 +150,7 @@ public:
 		node<VAR>* tmp2;
 		if (start == NULL)
 		{
-			printf("there are zero nodes \n");
+			return false;
 		}
 		else
 		{
@@ -164,17 +163,19 @@ public:
 			tmp = new_node;
 			tmp1->next = tmp;
 			tmp->next = tmp2;
+			
+			return true;
 		}
 	}
 
 	//le das la posicion de uno y lo liquida
-	void remove(uint position)
+	bool remove(uint position)
 	{
 		node<VAR>* tmp = start;
 
 		if (start == NULL)
 		{
-			printf("there are zero nodes \n");
+			return false;
 		}
 		else
 		{
@@ -188,7 +189,8 @@ public:
 			tmp2 = tmp;
 			tmp = tmp1;
 			tmp->next = tmp2->next;
-
+			
+			return true;
 			delete tmp2;
 		}
 	}
@@ -231,17 +233,32 @@ public:
 	   return start == NULL;
 	}
 
+};
+
+
+template<class VAR>
+class Stack
+{
+
+private:
+	list<VAR> new_list;
+public:
+	
+	void Push(const VAR& new_data)
+	{
+		new_list.Push_back(new_data);
+	
+	}
+
+	void Pop(VAR& data)
+	{
+	  new_list.pop_back(data);
+	}
 	
 
-
-
-
 };
+
+
+
 #endif
 
-
-/*
----------------------------------------------------------------------
-insert()coge una posicion y añade uno
-remove()coge uno y lo liquida
-*/

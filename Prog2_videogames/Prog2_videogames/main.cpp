@@ -5,28 +5,37 @@
 
 
 int main()
-{
+{   
+	int a = 1;
+	Stack<int> prueba;
+	prueba.Push(3);
+	prueba.Push(4);
+	prueba.Push(5);
+	prueba.Pop(a);
+	
+	
+	/*
+
 	int a = 1;
 	list<int> prueba;
-	prueba.Pushback(3);
-	prueba.Pushback(4);
-	prueba.Pushback(5);
+	prueba.Push_back(3);
+	prueba.Push_back(4);
+	prueba.Push_back(5);
 	prueba.push_front(2);
-	
+
 	prueba.remove(3);
-	
-	//prueba.End();
-	//prueba.Insert(1, 4);
-    //prueba.Front();
-	//prueba.pop_back(a);
-	//prueba.pop_front(a);
-	//prueba.size();
-	//prueba.clear();
+	prueba.End();
+	prueba.Insert(1, 4);
+    prueba.Front();
+	prueba.pop_back(a);
+	prueba.pop_front(a);
+	prueba.size();
+	prueba.clear();
 	
 
-	//prueba1.Insert(1, "x");
-	//prueba1.shink_to_fit();
-	/*
+	prueba1.Insert(1, "x");
+	prueba1.shink_to_fit();
+	
 	P2String prueba("hola");
 	P2String prueba1("mundo");
 	//const char* a = "mundo";

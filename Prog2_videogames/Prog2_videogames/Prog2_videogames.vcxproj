@@ -73,6 +73,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="P2String.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="pilas_Quas.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

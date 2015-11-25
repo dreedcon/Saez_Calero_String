@@ -1,0 +1,10 @@
+
+//PILAS\\
+van a uno lo eliminan y luego  van al siguinte y lo mismo
+esto quiere decir que no tendra remove e insert 
+cuando añade uno y lo elimina retornara el anterior
+solo puede mirar el de arriba
+stack o LIFO (last input firts output)
+
+//QUEUE\\
+FIFO(first input first output)
