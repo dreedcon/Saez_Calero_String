@@ -1,31 +1,31 @@
-﻿Compilación iniciada a las 25/11/2015 16:41:36.
-     1>Proyecto "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 25/11/2015 18:53:34.
+     1>Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>d:\users\sergiosc5\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(115): warning C4800: 'int' : forzando el valor a bool 'true' o 'false' (advertencia de rendimiento)
-                 d:\users\sergiosc5\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(97) : durante la compilación de la función miembro de plantilla de clase 'bool list<VAR>::pop_back(VAR &)'
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(119): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(114) : while compiling class template member function 'bool P2DynArray<VAR>::Popback(VAR &)'
                  with
                  [
                      VAR=int
                  ]
-                 d:\users\sergiosc5\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(255) : vea la referencia a la creación de instancias de plantilla de función 'bool list<VAR>::pop_back(VAR &)' que se está compilando
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(195) : see reference to function template instantiation 'bool P2DynArray<VAR>::Popback(VAR &)' being compiled
                  with
                  [
                      VAR=int
                  ]
-                 d:\users\sergiosc5\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(244) : vea la referencia a la creación de instancias de plantilla de clase 'list<VAR>' que se está compilando
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(185) : see reference to class template instantiation 'P2DynArray<VAR>' being compiled
                  with
                  [
                      VAR=int
                  ]
-                 d:\users\sergiosc5\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(10) : vea la referencia a la creación de instancias de plantilla de clase 'Stack<int>' que se está compilando
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(11) : see reference to class template instantiation 'Stack_Arry<int>' being compiled
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
          Debug\P2String.obj
-         Prog2_videogames.vcxproj -> D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
-     1>Compilación del proyecto terminada "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build destinos).
+         Prog2_videogames.vcxproj -> C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
+     1>Done Building Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:01.28
+Time Elapsed 00:00:00.97

@@ -110,12 +110,13 @@ public:
 	}
 
 	//Popback() devuelve el ultimo elemento y lo borra
-	void Popback()
+	bool Popback(VAR& _array)
 	{
 		if (num_elements == 0)
-			printf("there are zero elements \n");
+			return false;
 		else
 		num_elements--;
+		return _array;
 	}
 	
 	//si sobra memoria ha de asegurarnos que esa memoria se borra
@@ -177,7 +178,24 @@ public:
 	
 };
 
+template<class VAR>
+class Stack_Arry
+{
+private:
+	P2DynArray<VAR> new_dynarray;
+public:
 
+	void Push(const VAR& new_data)
+	{
+		new_dynarray.Pushback(new_data);
+	}
+
+	void Pop(VAR& new_data)
+	{
+		new_dynarray.Popback(new_data);
+	}
+
+};
 
 
 

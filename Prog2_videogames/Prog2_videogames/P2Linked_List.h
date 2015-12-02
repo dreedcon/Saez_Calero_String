@@ -237,7 +237,7 @@ public:
 
 
 template<class VAR>
-class Stack
+class Stack_list
 {
 
 private:
@@ -258,7 +258,25 @@ public:
 
 };
 
+template<class VAR>
+class Queue_list
+{
+private:
+	list<VAR> new_list;
+public:
 
+	void Push(const VAR& new_data)
+	{
+		new_list.Push_back(new_data);
+	}
+
+	void Pop(VAR& new_data)
+	{
+		new_list.pop_front(new_data);
+	}
+
+
+};
 
 #endif
 

@@ -7,14 +7,33 @@
 int main()
 {   
 	int a = 1;
-	Stack<int> prueba;
+
+	Stack_Arry<int> prueba1;
+	prueba1.Push(1);
+	prueba1.Push(2);
+	prueba1.Push(3);
+	prueba1.Pop(a);
+	prueba1.Pop(a);
+	prueba1.Pop(a);
+
+	
+	
+	/*
+
+	
+	Stack_list<int> prueba1;
+	prueba1.Push(3);
+	prueba1.Push(4);
+	prueba1.Push(5);
+	prueba1.Pop(a);
+
+	Queue_list<int> prueba;
 	prueba.Push(3);
 	prueba.Push(4);
 	prueba.Push(5);
 	prueba.Pop(a);
-	
-	
-	/*
+	prueba.Pop(a);
+	prueba.Pop(a);
 
 	int a = 1;
 	list<int> prueba;
