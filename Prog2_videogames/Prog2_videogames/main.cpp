@@ -4,18 +4,26 @@
 #include "P2Linked_List.h"
 
 
+float Factorial(int num)
+{
+	if (num > 1)
+	{
+		return num*Factorial(num - 1);
+	}
+	else
+		return 1;
+}
+
+
+
+
 int main()
 {   
 	int a = 1;
-
-	Stack_Arry<int> prueba1;
-	prueba1.Push(1);
-	prueba1.Push(2);
-	prueba1.Push(3);
-	prueba1.Pop(a);
-	prueba1.Pop(a);
-	prueba1.Pop(a);
-
+ 
+	
+	Factorial(5);
+	
 	
 	
 	/*

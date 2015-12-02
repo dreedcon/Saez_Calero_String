@@ -207,9 +207,10 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
+				case IN_JUMP_FINISH: state = ST_IDLE; break;
+				case IN_X: state = ST_PUNCH_FORWARD_JUMP; punch_timer = SDL_GetTicks(); break;
 				case IN_LEFT_AND_RIGHT: state = ST_IDLE; break;
 				case IN_JUMP: state = ST_JUMP_FORWARD; jump_timer = SDL_GetTicks();  break;
-				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
 				}
 			}
 			break;
@@ -218,9 +219,10 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
+				case IN_JUMP_FINISH: state = ST_IDLE; break;
+				case IN_X: state = ST_PUNCH_BACKWARD_JUMP; punch_timer = SDL_GetTicks(); break;
 				case IN_LEFT_AND_RIGHT: state = ST_IDLE; break;
 				case IN_JUMP: state = ST_JUMP_BACKWARD; jump_timer = SDL_GetTicks();  break;
-				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
 				}
 			}
 			break;
@@ -230,7 +232,7 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 				switch(last_input)
 				{
 				case IN_JUMP_FINISH: state = ST_IDLE; break;
-				case IN_X: state = ST_PUNCH_NEUTRAL_JUMP; punch_timer = SDL_GetTicks(); break;
+				case IN_PUNCH_FINISH: state = ST_JUMP_NEUTRAL; break;
 				}
 			}
 			break;
@@ -239,10 +241,8 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
-				case IN_LEFT_AND_RIGHT: state = ST_IDLE; break;
-				case IN_JUMP: state = ST_JUMP_FORWARD; jump_timer = SDL_GetTicks();  break;
-				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
-				case IN_X: state = ST_PUNCH_FORWARD_JUMP; punch_timer = SDL_GetTicks(); break;
+				case IN_PUNCH_FINISH: state = ST_JUMP_FORWARD; break;
+				case IN_JUMP_FINISH: state = ST_IDLE; break;;
 				}
 			}
 			break;
@@ -251,10 +251,8 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
-				case IN_LEFT_AND_RIGHT: state = ST_IDLE; break;
-				case IN_JUMP: state = ST_JUMP_BACKWARD; jump_timer = SDL_GetTicks();  break;
-				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
-				case IN_X: state = ST_PUNCH_BACKWARD_JUMP; punch_timer = SDL_GetTicks(); break;
+				case IN_PUNCH_FINISH: state = ST_JUMP_BACKWARD; break;
+				case IN_JUMP_FINISH: state = ST_IDLE; break;
 				}
 			}
 			break;
@@ -263,7 +261,7 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
-				case IN_X: state = ST_PUNCH_STANDING; punch_timer = SDL_GetTicks(); break;
+				case IN_PUNCH_FINISH: state = ST_IDLE; break;
 				}
 			}
 			break;
@@ -272,8 +270,10 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
-				case IN_JUMP: state = ST_IDLE; break;
 				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
+				case IN_X: state = ST_PUNCH_CROUCH; punch_timer = SDL_GetTicks();  break;
+				case IN_CROUCH_UP: state = ST_IDLE; break;
+				
 				}
 			}
 			break;
@@ -281,10 +281,8 @@ ryu_states process_fsm(p2Qeue<ryu_inputs>& inputs)
 			{
 				switch(last_input)
 				{
-				case IN_JUMP: state = ST_IDLE; break;
-				case IN_CROUCH_DOWN: state = ST_CROUCH; break;
-				case IN_X: state = ST_PUNCH_CROUCH; punch_timer = SDL_GetTicks();  break;
-			    }
+				case IN_PUNCH_FINISH: state = ST_CROUCH; break;
+				}
 			}
 			break;
 		}
