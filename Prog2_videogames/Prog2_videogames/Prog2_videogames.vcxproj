@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="P2DynArray.h" />
+    <ClInclude Include="P2Graph.h" />
     <ClInclude Include="P2Linked_List.h" />
     <ClInclude Include="P2String.h" />
     <ClInclude Include="Utilities.h" />
