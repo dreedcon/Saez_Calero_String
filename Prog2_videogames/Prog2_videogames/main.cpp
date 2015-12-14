@@ -2,6 +2,7 @@
 #include "P2string.h"
 #include "P2DynArray.h"
 #include "P2Linked_List.h"
+#include "P2Graph.h"
 
 
 float Factorial(int num)
@@ -21,11 +22,14 @@ int main()
 {   
 	int a = 1;
  
+	Graph<int> prueba;
+	Graph<int>::Node* node1 = prueba.AddNode(1);
+	Graph<int>::Node* node2 = prueba.AddNode(2);
+	Graph<int>::Node* node3 = prueba.AddNode(3);
 	
-	Factorial(5);
-	
-	
-	
+	node1->AddLink(node3);
+	node1->AddLink(node2);
+
 	/*
 
 	
