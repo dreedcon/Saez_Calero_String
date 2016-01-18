@@ -67,12 +67,14 @@
     <ClInclude Include="P2DynArray.h" />
     <ClInclude Include="P2Graph.h" />
     <ClInclude Include="P2Linked_List.h" />
+    <ClInclude Include="P2List_double.h" />
+    <ClInclude Include="P2list_ric.h" />
+    <ClInclude Include="P2Point.h" />
     <ClInclude Include="P2String.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="P2String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="pilas_Quas.txt" />

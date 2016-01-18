@@ -15,27 +15,27 @@ struct node
 
 
 template<class VAR>
-class list
+class List
 {
 
 public:
 
 	node<VAR>* start = NULL;
 	
-	list(){}
-	~list(){ clear(); }
+	List(){}
+	~List(){ clear(); }
 	
 
 
-	//metodes\\
+	//utility metodes\\
 	
-	node<VAR>* Front()
+	VAR Front()
 	{
-		return start;
+		return start->value;
 	
 	}
 	
-	node<VAR>* End()
+	VAR End()
 	{
 		node<VAR>* tmp = start;
 		while (tmp->next)
@@ -43,12 +43,10 @@ public:
 			tmp = tmp->next;
 		}
 	  
-		return tmp;
+		return tmp->value;
 	}
 
-	//utility metodes\\
-
-
+	//metodes\\
 
 	//añade uno al final
 	void Push_back(const VAR& new_data)
@@ -89,6 +87,7 @@ public:
 
 			start = new_node;
 			new_node->next = tmp;
+			
 		}
 	}
 
@@ -109,15 +108,21 @@ public:
 		  tmp1 = tmp;
 		  tmp = tmp->next;
 		}
-		tmp1 = tmp1->next = NULL;
+		
 		data = tmp->value;
+		
+		if (start->next == NULL)
+		{
+			start = NULL;
+		}
+		
 		delete tmp;
+		tmp1 = tmp1->next = NULL;
 		return data;
 		return true;
 		}
 	   
 	 }
-
 
 	//elimina uno del principio
 	bool pop_front(VAR& data)
@@ -241,7 +246,7 @@ class Stack_list
 {
 
 private:
-	list<VAR> new_list;
+	List<VAR> new_list;
 public:
 	
 	void Push(const VAR& new_data)
@@ -258,11 +263,12 @@ public:
 
 };
 
+/*
 template<class VAR>
 class Queue_list
 {
 private:
-	list<VAR> new_list;
+	List<VAR> new_list;
 public:
 
 	void Push(const VAR& new_data)
@@ -277,6 +283,7 @@ public:
 
 
 };
+*/
 
 #endif
 

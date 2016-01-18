@@ -1,14 +1,85 @@
-﻿Compilación iniciada a las 14/12/2015 17:08:43.
-     1>Proyecto "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 18/01/2016 12:01:33.
+     1>Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(127): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(121) : while compiling class template member function 'bool P2DynArray<int>::Popback(VAR &)'
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(44) : see reference to function template instantiation 'bool P2DynArray<int>::Popback(VAR &)' being compiled
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(32) : see reference to class template instantiation 'P2DynArray<int>' being compiled
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(145): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(118) : while compiling class template member function 'bool List_double<int>::Pop_back(VAR &)'
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(62) : see reference to function template instantiation 'bool List_double<int>::Pop_back(VAR &)' being compiled
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(53) : see reference to class template instantiation 'List_double<int>' being compiled
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(121): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2linked_list.h(96) : while compiling class template member function 'bool List<int>::pop_back(VAR &)'
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(80) : see reference to function template instantiation 'bool List<int>::pop_back(VAR &)' being compiled
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(71) : see reference to class template instantiation 'List<int>' being compiled
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2point.h(119): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2point.h(114) : while compiling class template member function 'int p2Point<int>::DistanceTo(const p2Point<int> &) const'
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(149) : see reference to function template instantiation 'int p2Point<int>::DistanceTo(const p2Point<int> &) const' being compiled
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(144) : see reference to class template instantiation 'p2Point<int>' being compiled
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(164): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(152) : while compiling class template member function 'bool List_double<int>::Pop_front(VAR &)'
+                 with
+                 [
+                     VAR=int
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(306) : see reference to function template instantiation 'bool List_double<int>::Pop_front(VAR &)' being compiled
+                 with
+                 [
+                     VAR=int
+                 ]
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(164): warning C4800: 'const Graph<int>::vertice ' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(152) : while compiling class template member function 'bool List_double<VAR>::Pop_front(VAR &)'
+                 with
+                 [
+                     VAR=const Graph<int>::vertice *
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(306) : see reference to function template instantiation 'bool List_double<VAR>::Pop_front(VAR &)' being compiled
+                 with
+                 [
+                     VAR=const Graph<int>::vertice *
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2list_double.h(280) : see reference to class template instantiation 'List_double<VAR>' being compiled
+                 with
+                 [
+                     VAR=const Graph<int>::vertice *
+                 ]
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2graph.h(79) : see reference to class template instantiation 'Queue_list<const Graph<int>::vertice *>' being compiled
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2graph.h(70) : while compiling class template member function 'bool Graph<int>::Is_reachable_iterative(const Graph<int>::vertice *,const Graph<int>::vertice *)'
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(169) : see reference to function template instantiation 'bool Graph<int>::Is_reachable_iterative(const Graph<int>::vertice *,const Graph<int>::vertice *)' being compiled
+                 c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\main.cpp(158) : see reference to class template instantiation 'Graph<int>' being compiled
+     1>c:\users\sergio\documents\github\saez_calero_string\prog2_videogames\prog2_videogames\p2dynarray.h(166): warning C4715: 'P2DynArray<Graph<int>::vertice const *>::find' : not all control paths return a value
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
-         Debug\P2String.obj
-         Prog2_videogames.vcxproj -> D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
-     1>Compilación del proyecto terminada "D:\Users\sergiosc5\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build destinos).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.lib" /MACHINE:X86 Debug\main.obj
+         Prog2_videogames.vcxproj -> C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Debug\Prog2_videogames.exe
+     1>Done Building Project "C:\Users\Sergio\Documents\GitHub\Saez_Calero_String\Prog2_videogames\Prog2_videogames\Prog2_videogames.vcxproj" (Build target(s)).
 
-Compilación correcta.
+Build succeeded.
 
-Tiempo transcurrido 00:00:01.43
+Time Elapsed 00:00:01.57
